@@ -1,8 +1,14 @@
 import * as React from "react";
 import { connect } from "react-redux";
 
-const Extension = () => {
-  return <div>Extension</div>;
-};
+class Extension extends React.Component {
+  public render() {
+    console.log(this.props);
+    return <div>Extension</div>;
+  }
+}
 
-export default connect(state => state)(Extension);
+const mapState = (state: any) => ({
+  count: state.count
+});
+export default connect(mapState)(Extension);
