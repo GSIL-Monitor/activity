@@ -6,7 +6,7 @@ import Router from "./Router";
 import { init } from "@rematch/core";
 
 import { Provider } from "react-redux";
-
+import "./index.css";
 // 初始化 store
 const store = init({
   models

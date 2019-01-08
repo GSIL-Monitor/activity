@@ -1,10 +1,10 @@
 import * as React from "react";
 import { connect } from "react-redux";
-
+import './style.css'
 class Extension extends React.Component {
   public render() {
     console.log(this.props);
-    return <div>Extension</div>;
+    return <div className="test">Extension</div>;
   }
 }
 
