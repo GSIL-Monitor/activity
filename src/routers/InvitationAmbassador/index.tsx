@@ -1,7 +1,7 @@
 import * as React from "react";
 import { connect } from "react-redux";
 import "./style.less";
-class Extension extends React.Component {
+class InvitationAmbassador extends React.Component {
   public render() {
     return <div className="test">111</div>;
   }
@@ -10,4 +10,4 @@ class Extension extends React.Component {
 const mapState = (state: any) => ({
   count: state.count
 });
-export default connect(mapState)(Extension);
+export default connect(mapState)(InvitationAmbassador);
