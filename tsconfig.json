@@ -9,7 +9,6 @@
     "allowJs": true,
     "jsx": "react",
     "moduleResolution": "node",
-    "rootDir": "src",
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "noImplicitThis": false,
@@ -27,6 +26,7 @@
     "acceptance-tests",
     "webpack",
     "jest",
+    "src/helper/api.ts",
     "src/setupTests.ts"
   ]
 }

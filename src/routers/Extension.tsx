@@ -1,10 +1,15 @@
+import Button from "antd-mobile/lib/button"; // 加载 JS
+import "antd-mobile/lib/button/style/css";
 import * as React from "react";
 import { connect } from "react-redux";
-import './style.css'
+import "./style.less";
 class Extension extends React.Component {
   public render() {
-    console.log(this.props);
-    return <div className="test">Extension</div>;
+    return (
+      <div className="test">
+        <Button type="primary">111</Button>
+      </div>
+    );
   }
 }
 
