@@ -18,6 +18,11 @@ const dirBaseApiUrl = {
     fundebug: true
   }
 };
-const AppConfig = { ...dirBaseApiUrl[process.env.NODE_ENV!] };
+const AppConfig = {
+  ...dirBaseApiUrl[process.env.NODE_ENV!],
+  APP_DOWNLOAD: "http://d.xiaojukeji.com/c/73852",
+  APPID: "wx2564586383eb7cd2",
+  AppSecret: "e4ad4648624c5e25a848ba394d0b1454"
+};
 
 export { AppConfig };
