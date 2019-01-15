@@ -1,1 +1,1 @@
-export { default as count } from "./count";
+export { visible } from "./visible";

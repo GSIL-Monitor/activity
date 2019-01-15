@@ -1,20 +1,24 @@
 import * as React from "react";
+import { connect } from "react-redux";
 import { ModalComponent } from "../../../components/ModalComponent";
 import closeImg from "../../../images/MyInvitation/loginClose.png";
+import { IState, IVisible } from "../../../types";
 import "./style.less";
-export class ActivityRules extends React.Component {
-  public state = {
-    visible: true
-  };
+interface IProps {
+  visible: IVisible;
+  dispatch: any;
+}
+class ActivityRules extends React.Component<IProps> {
   public onClose = () => {
-    this.setState({
-      visible: false
+    const { dispatch } = this.props;
+    dispatch.visible.setState({
+      ActivityRules: false
     });
   };
   public render() {
-    const { visible } = this.state;
+    const { visible } = this.props;
     return (
-      <ModalComponent visible={visible}>
+      <ModalComponent visible={visible.ActivityRules}>
         <div className="rules-content">
           <div className="rules-content-title">活动规则</div>
           <img
@@ -61,3 +65,7 @@ export class ActivityRules extends React.Component {
     );
   }
 }
+const mapState = (state: IState) => ({
+  visible: state.visible
+});
+export default connect(mapState)(ActivityRules);

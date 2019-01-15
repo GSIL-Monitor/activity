@@ -1,22 +1,27 @@
 import QRCode from "qrcode.react";
 import * as React from "react";
+import { connect } from "react-redux";
 import { ModalComponent } from "../../../components";
 import { AppConfig } from "../../../helper/config";
 import closeImg from "../../../images/MyInvitation/loginClose.png";
+import { IState, IVisible } from "../../../types";
 import "./style.less";
-export class InvitationQRCode extends React.Component {
-  public state = {
-    visible: true
-  };
+
+interface IProps {
+  visible: IVisible;
+  dispatch: any;
+}
+class InvitationQRCode extends React.Component<IProps> {
   public onClose = () => {
-    this.setState({
-      visible: false
+    const { dispatch } = this.props;
+    dispatch.visible.setState({
+      InvitationQRCode: false
     });
   };
   public render() {
-    const { visible } = this.state;
+    const { visible } = this.props;
     return (
-      <ModalComponent visible={visible}>
+      <ModalComponent visible={visible.InvitationQRCode}>
         <div className="invitation-code">
           <QRCode value={AppConfig.SHARE_URL} size={178} />
           <img
@@ -33,3 +38,7 @@ export class InvitationQRCode extends React.Component {
     );
   }
 }
+const mapState = (state: IState) => ({
+  visible: state.visible
+});
+export default connect(mapState)(InvitationQRCode);

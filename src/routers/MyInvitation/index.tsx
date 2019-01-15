@@ -1,23 +1,31 @@
-// import QRCode from "qrcode.react";
 import * as React from "react";
 import { connect } from "react-redux";
-// import { ActivityRules } from "./ActivityRules";
-// import { InvitationQRCode } from "./InvitationQRCode";
-import { ShareActions } from "./ShareActions";
+import { IState } from "../../types";
+import ActivityRules from "./ActivityRules";
+import ShareActions from "./ShareActions";
 import "./style.less";
-class MyInvitation extends React.Component {
+
+interface IProps {
+  dispatch: any;
+}
+class MyInvitation extends React.Component<IProps> {
+  public ShowModal = (key: string) => {
+    const { dispatch } = this.props;
+    dispatch.visible.setState({
+      [key]: true
+    });
+  };
   public render() {
     return (
       <div>
-        {/* <ActivityRules /> */}
-        {/* <InvitationQRCode /> */}
+        <div onClick={this.ShowModal.bind(this, "ShareActions")}>分享</div>
+        <div onClick={this.ShowModal.bind(this, "ActivityRules")}>活动规则</div>
+        <ActivityRules />
         <ShareActions />
       </div>
     );
   }
 }
 
-const mapState = (state: any) => ({
-  count: state.count
-});
+const mapState = (state: IState) => ({});
 export default connect(mapState)(MyInvitation);
