@@ -1,7 +1,5 @@
-// tslint:disable
 import * as React from "react";
 import { connect } from "react-redux";
-import { AppConfig } from "../../helper/config";
 import "./style.less";
 class InvitationAmbassador extends React.Component {
   public state = {
@@ -16,15 +14,14 @@ class InvitationAmbassador extends React.Component {
     });
   };
   public test2 = () => {
-    navigator.geolocation.getCurrentPosition(this.test);
+    if (window.postMessage) {
+      window.postMessage("11111", "111");
+    }
   };
   public render() {
-    const { latitude, longitude } = this.state;
     return (
       <div>
         <div onClick={this.test2}>test</div>
-        <a href={AppConfig.AppConfig}>{longitude}</a>/
-        <a href={AppConfig.AppConfig}>{latitude}</a>
       </div>
     );
   }

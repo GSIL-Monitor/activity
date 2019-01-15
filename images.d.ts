@@ -5,4 +5,4 @@ declare module "*.jpeg";
 declare module "*.gif";
 declare module "*.bmp";
 declare module "portable-fetch";
-declare module "wechat-jssdk/dist/client";
+declare module "qrcode.react";

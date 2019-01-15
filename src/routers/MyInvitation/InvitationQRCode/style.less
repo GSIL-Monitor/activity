@@ -1,0 +1,32 @@
+@import "../../../const/color.less";
+.invitation-code {
+  width: 343px;
+  height: 366px;
+  border-radius: 2px;
+  background-color: white;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  &-title {
+    margin-top: 35px;
+    font-size: 15px;
+    color: @title_color;
+    font-weight: 600;
+    font-family: PingFangSC;
+    line-height: 20px;
+  }
+  &-text {
+    font-size: 14px;
+    color: @text_color;
+    margin-top: 2px;
+  }
+  &-close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 15px;
+    height: 15px;
+  }
+}
