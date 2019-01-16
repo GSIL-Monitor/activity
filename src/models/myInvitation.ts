@@ -1,6 +1,6 @@
+import fetch from "portable-fetch";
 import { API, City } from "../api";
 import { IMyInvitation } from "../types";
-
 const obj = {
   mobile: 13276075623,
   status: "已注册",
@@ -20,6 +20,12 @@ export const myInvitation = {
     }
   },
   effects: (dispatch: any) => ({
+    async getJsApiTicket() {
+      const data = await fetch(
+        "https://api.app.aixiangdao.tech/a027/basic/weChat/getJsApiTicket"
+      );
+      console.log(data);
+    },
     async getCities() {
       const { data } = await API.basic.getCities();
       dispatch.myInvitation.setState(data);
