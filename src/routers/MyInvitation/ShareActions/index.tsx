@@ -27,15 +27,14 @@ class ShareActions extends React.Component<IProps> {
   public showInvitationQRCode = () => {
     const { dispatch } = this.props;
     dispatch.visible.setState({
-      InvitationQRCode: true,
-      ShareActions: false
+      InvitationQRCode: true
     });
   };
   public shareFriends = (index: number) => {
     if (typeof window.postMessage !== "function") {
       return;
     }
-    window.postMessage(index, "1");
+    window.postMessage(index, "share");
   };
   public actions = (index: number) => {
     if (index === 2) {
@@ -43,6 +42,7 @@ class ShareActions extends React.Component<IProps> {
     } else {
       this.shareFriends(index);
     }
+    this.onClose();
   };
   public render() {
     const { visible } = this.props;
