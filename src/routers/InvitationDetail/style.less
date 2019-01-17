@@ -1,6 +1,56 @@
-.test {
-  color: red;
-  background-color: red;
-  width: 375px;
-  font-size: 16px;
+.invitation-detail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #b42c31;
+  &-header {
+    width: 375px;
+    height: 514px;
+    background-image: url("../../images/InvitationDetail/banner.png");
+    background-size: 100% 100%;
+  }
+  &-button {
+    width: 375px;
+    height: 77px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &-image {
+      width: 254px;
+      height: 48px;
+      background-image: url("../../images/InvitationDetail/draw.png");
+      background-size: 100% 100%;
+    }
+  }
+  &-border {
+    width: 341px;
+    height: 341px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 0 30px;
+    border: 2px solid #d19d6a;
+    background-color: #fff8f1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    &-header {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    &-spot {
+      width: 17px;
+      height: 11px;
+    }
+    &-title {
+      color: #e6ae82;
+      font-size: 16px;
+      font-family: PingFangSC;
+      font-weight: 700;
+      margin: 0 8px;
+    }
+  }
 }

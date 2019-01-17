@@ -1,5 +1,6 @@
 import * as React from "react";
 import { connect } from "react-redux";
+import spotImg from "../../images/InvitationDetail/spot.png";
 import "./style.less";
 class InvitationDetail extends React.Component<any> {
   public state = {
@@ -15,8 +16,26 @@ class InvitationDetail extends React.Component<any> {
   }
   public render() {
     return (
-      <div>
-        <div>test</div>
+      <div className="invitation-detail">
+        <div className="invitation-detail-header" />
+        <div className="invitation-detail-button">
+          <div className="invitation-detail-button-image" />
+        </div>
+        <div className="invitation-detail-border">
+          <div className="invitation-detail-border-header">
+            <img
+              src={spotImg}
+              alt=""
+              className="invitation-detail-border-spot"
+            />
+            <div className="invitation-detail-border-title">精选餐厅</div>
+            <img
+              src={spotImg}
+              alt=""
+              className="invitation-detail-border-spot"
+            />
+          </div>
+        </div>
       </div>
     );
   }
